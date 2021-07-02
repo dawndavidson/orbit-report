@@ -14,7 +14,7 @@ export class AppComponent {
   
   constructor() {
     this.sourceList = [];
-    this.displayList = []
+    this.displayList = [];
     let satellitesUrl = 'https://handlers.education.launchcode.org/static/satellites.json';
  
     window.fetch(satellitesUrl).then(function(response) {
@@ -34,7 +34,6 @@ export class AppComponent {
          }.bind(this));
       }.bind(this));
  }
- 
  search(searchTerm: string): void {
    let matchingSatellites: Satellite[] = [];
    
