@@ -6,7 +6,14 @@
       <th>Operational</th>
       <th>Orbit Type</th>
       <th>Launch Date</th>
+      <!-- <td>shouldShowWarning</td> -->
    </tr>
-   <tr *ngFor= "let satellite of satellites">{{satellite.name}} {{satellite.type}}<th>{{satellite.type}}</th> <th> {{satellite.operational}}<th> {{satellite.orbitType}} <th>{{satellite.launchDate}}</th></tr> 
+   <tr *ngFor= "let satellite of satellites">
+      <th (click)='sort'>{{satellite.name}}</th> 
+      <th [class.warning]='satellite.isSpaceDebris()' (click)='sort'>{{satellite.type}}</th> <th>{{satellite.operational}}</th>
+      <th>{{satellite.orbitType}} <th>
+      {{satellite.launchDate}}</th>
+      </tr> 
+   
   
 </table>
